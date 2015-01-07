@@ -414,7 +414,7 @@ START_INI=$(dirname $JETTY_START)/start.ini
 
 RUN_ARGS=(${JAVA_OPTIONS[@]} -jar "$JETTY_START" $JETTY_ARGS "${CONFIGS[@]}")
 RUN_CMD=("$JAVA" ${RUN_ARGS[@]})
-
+JAVA_OPTIONS+=("-Djava.net.preferIPv4Stack=true")
 #####################################################
 # Comment these out after you're happy with what
 # the script is doing.
