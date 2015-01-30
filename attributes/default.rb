@@ -153,7 +153,7 @@ default['solrcloud']['solr_config']['solrcloud']['distrib_update_conn_timeout'] 
 default['solrcloud']['solr_config']['solrcloud']['distrib_update_so_timeout']      = 1_000_000
 default['solrcloud']['solr_config']['solrcloud']['leader_vote_wait']   = 1_000_000
 default['solrcloud']['solr_config']['solrcloud']['zk_client_timeout']  = 15_000
-default['solrcloud']['solr_config']['solrcloud']['zk_host']            = nide['solrcloud']['zk_hosts'] || node[:opsworks][:layers]['zookeeper'][:instances].map{|name, h| "#{h[:private_ip]}:2181" } # Syntax: ["zkHost:zkPort"]
+default['solrcloud']['solr_config']['solrcloud']['zk_host']            = node['solrcloud']['zk_hosts'] || node[:opsworks][:layers]['zookeeper'][:instances].map{|name, h| "#{h[:private_ip]}:2181" } # Syntax: ["zkHost:zkPort"]
 default['solrcloud']['solr_config']['solrcloud']['generic_core_node_names']        = 'true'
 
 default['solrcloud']['solr_config']['shard_handler_factory']['socket_timeout']       = 0
